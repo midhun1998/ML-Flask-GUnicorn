@@ -2,6 +2,8 @@
 
 import pandas as pd
 import numpy as np
+import pickle
+import matplotlib.pyplot as plt
 
 from sklearn.preprocessing import MinMaxScaler
 from keras.models import Sequential
@@ -71,3 +73,5 @@ valid = new_data[987:]
 valid['Predictions'] = closing_price
 plt.plot(train['Close'])
 plt.plot(valid[['Close','Predictions']])
+
+# pickle.dump(model, open(‘model.pkl’, ‘wb’))
